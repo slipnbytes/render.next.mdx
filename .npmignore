@@ -1,7 +1,18 @@
+src/
+test/
 dist/
 typings/
+scripts/
 
+.env
 .eslintrc.js
+.editorconfig
+.eslintignore
+.prettierignore
+
+renovate.json
+tsconfig.types.json
+
 babel.config.js
 rollup.config.js
 release.config.js

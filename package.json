@@ -1,6 +1,6 @@
 {
   "name": "@hitechline/next-mdx",
-  "version": "0.0.1e",
+  "version": "0.0.1f",
   "license": "AGPL-3.0",
   "main": "index.js",
   "module": "index.esm.js",
