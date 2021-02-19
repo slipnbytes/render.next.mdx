@@ -1,6 +1,6 @@
 {
   "name": "@hitechline/next-mdx",
-  "version": "0.0.1d",
+  "version": "0.0.1e",
   "license": "AGPL-3.0",
   "main": "index.js",
   "module": "index.esm.js",
@@ -38,14 +38,6 @@
     "lib": "src",
     "test": "__tests__"
   },
-  "files": [
-    "dist",
-    "typings",
-    "*.js",
-    "*.js.map",
-    "*.d.ts",
-    "*.d.ts.map"
-  ],
   "keywords": [
     "react",
     "next",
