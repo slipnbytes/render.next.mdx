@@ -1,0 +1,94 @@
+{
+  "name": "@hitechline/next-mdx",
+  "version": "0.0.1",
+  "license": "AGPL-3.0",
+  "main": "dist/index.js",
+  "module": "dist/next-mdx.esm.js",
+  "types": "typings/index.d.ts",
+  "scripts": {
+    "fix": "yarn lint:fix && yarn prettier:fix",
+    "clean": "rimraf dist typings",
+    "prepublishOnly": "yarn build",
+    "release": "yarn node-env-run --exec \"semantic-release --ci false\"",
+    "release:check": "yarn node-env-run --exec \"semantic-release\"",
+    "test": "jest --passWithNoTests",
+    "test:watch": "yarn test --watchAll",
+    "build": "tsdx build --transpileOnly",
+    "prebuild": "yarn clean",
+    "lint": "eslint ./ --ext js,jsx,ts,tsx",
+    "lint:fix": "eslint ./ --ext js,jsx,ts,tsx --fix",
+    "prettier": "prettier --check ./**/*.{js,jsx,ts,tsx}",
+    "prettier:fix": "prettier --write ./**/*.{js,jsx,ts,tsx}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hitechline/next-mdx.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "typings"
+  ],
+  "keywords": [
+    "react",
+    "next",
+    "mdx",
+    "render"
+  ],
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/plugin-transform-react-jsx": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/runtime": "^1.6.22",
+    "babel-plugin-transform-remove-imports": "^1.5.2",
+    "parse-imports": "^0.0.5",
+    "react-is": "^17.0.1",
+    "unified": "^9.2.0"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.12.17",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@semantic-release/npm": "^7.0.10",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@types/jest": "^26.0.20",
+    "@types/react": "17.0.1",
+    "@types/react-dom": "17.0.1",
+    "@types/react-is": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "eslint": "7.20.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "jest": "^26.6.3",
+    "node-env-run": "^4.0.2",
+    "prettier": "2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rimraf": "3.0.2",
+    "semantic-release": "^17.3.9",
+    "tsdx": "^0.14.1",
+    "typescript": "4.1.5"
+  }
+}
