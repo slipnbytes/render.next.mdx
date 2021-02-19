@@ -10,7 +10,7 @@ export function parseScope(components: string[], providedScope: Scope): Scope {
       const currentComponent = providedScope[key];
 
       if (
-        typeof currentComponent !== 'function' &&
+        typeof currentComponent !== 'function' ||
         !isValidElementType(currentComponent)
       ) {
         return currentScope;
