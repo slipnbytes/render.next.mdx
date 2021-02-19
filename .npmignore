@@ -1,0 +1,8 @@
+dist/
+typings/
+
+.eslintrc.js
+babel.config.js
+rollup.config.js
+release.config.js
+prettier.config.js
