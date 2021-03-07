@@ -1,19 +1,15 @@
 {
   "name": "@hitechline/next-mdx",
-  "version": "0.0.1f",
+  "version": "0.0.1",
   "license": "AGPL-3.0",
-  "main": "index.js",
-  "module": "index.esm.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "typings/index.d.ts",
   "scripts": {
     "fix": "yarn lint:fix && yarn prettier:fix",
-    "clean": "rimraf dist typings",
-    "purge": "node scripts/clean",
-    "postpublish": "yarn purge",
-    "prepare": "node scripts/prepare",
+    "clean": "rimraf .tarball dist typings provider/**.js*",
     "prepublishOnly": "yarn build",
-    "release": "yarn node-env-run --exec \"semantic-release --ci false\"",
-    "release:check": "yarn node-env-run --exec \"semantic-release\"",
+    "release": "yarn node-env-run --exec \"semantic-release\"",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watchAll",
     "lint": "eslint ./ --ext js,jsx,ts,tsx",
@@ -38,6 +34,11 @@
     "lib": "src",
     "test": "__tests__"
   },
+  "files": [
+    "dist",
+    "typings",
+    "provider"
+  ],
   "keywords": [
     "react",
     "next",
