@@ -6,38 +6,61 @@ import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json';
 
 /**
+ * @type {import('rollup').Plugin[]}
+ */
+const basePlugins = [
+  nodeResolve(),
+  commonjs(),
+  babel({ babelHelpers: 'bundled' }),
+];
+
+/**
  * @type {import('rollup').RollupOptions}
  */
-const config = {
-  input: ['src/index.ts', 'src/Provider.tsx'],
+const baseOptions = {
   external: getExternal(),
-  output: [
-    {
-      format: 'cjs',
-      dir: 'dist',
-      sourcemap: true,
-    },
-    {
-      format: 'esm',
-      dir: 'dist',
-      sourcemap: true,
-      entryFileNames: makeEntryFileNames('esm'),
-    },
-  ],
-  plugins: [
-    typescript({
-      rootDir: 'src',
-      include: ['**/*'],
-    }),
-    nodeResolve(),
-    commonjs(),
-    babel({ babelHelpers: 'bundled' }),
-  ],
+  plugins: [makeTypeScriptPlugin(), ...basePlugins],
 };
 
-function makeEntryFileNames(extension) {
-  return info => `${info.name}.${extension}.js`;
+/**
+ * @type {import('rollup').RollupOptions[]}
+ */
+const config = [
+  {
+    input: 'src/index.ts',
+    output: {
+      format: 'cjs',
+      file: 'dist/index.js',
+      sourcemap: true,
+    },
+  },
+  {
+    input: 'src/Provider.tsx',
+    plugins: [makeTypeScriptPlugin({ outDir: 'provider' }), basePlugins],
+    output: [
+      {
+        format: 'cjs',
+        file: 'provider/index.js',
+        sourcemap: true,
+      },
+      {
+        format: 'esm',
+        file: 'provider/index.esm.js',
+        sourcemap: true,
+      },
+    ],
+  },
+].map(cfg => ({ ...baseOptions, ...cfg }));
+
+/**
+ * @param {import('@rollup/plugin-typescript').RollupTypescriptOptions} options
+ * @return {import('rollup').Plugin}
+ */
+function makeTypeScriptPlugin(options = {}) {
+  return typescript({ rootDir: 'src', include: ['**/*'], ...options });
 }
+
+//
 
 function makeExternalPredicate(externalArray) {
   if (!externalArray.length) return () => false;
