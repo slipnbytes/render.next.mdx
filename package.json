@@ -74,7 +74,7 @@
     "@semantic-release/github": "7.2.0",
     "@semantic-release/npm": "7.0.10",
     "@semantic-release/release-notes-generator": "9.0.2",
-    "@types/jest": "26.0.20",
+    "@types/jest": "26.0.21",
     "@types/react": "17.0.3",
     "@types/react-dom": "17.0.2",
     "@types/react-is": "17.0.0",
