@@ -1,6 +1,6 @@
 # next-mdx
 
-MDX Rendering tool for [NextJS](https://nextjs.org/).
+MDX Render tool for [NextJS](https://nextjs.org/).
 
 ## Installation
 
