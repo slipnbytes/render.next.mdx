@@ -1,5 +1,5 @@
 import { useMDXComponents } from '@mdx-js/react';
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { hydrate } from 'react-dom';
 
 import { makeMarkdownElement } from './makeMarkdownElement';
@@ -23,7 +23,7 @@ export const Provider = ({
     const markdownRendered = makeMarkdownElement(code, scope);
 
     hydrate(markdownRendered, elementRef.current);
-  }, [html, code, requiredComponents]);
+  }, [html, code, components, requiredComponents]);
 
   return (
     <div

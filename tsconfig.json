@@ -2,7 +2,7 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "typings"],
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "baseUrl": "src",
     "outDir": "dist",
     "target": "ESNext",
