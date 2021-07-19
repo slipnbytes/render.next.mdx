@@ -59,7 +59,7 @@
     "babel-plugin-transform-remove-imports": "^1.5.2",
     "parse-imports": "^0.0.5",
     "react-is": "^17.0.1",
-    "unified": "^9.2.0"
+    "unified": "^10.0.0"
   },
   "devDependencies": {
     "@babel/cli": "7.14.5",
