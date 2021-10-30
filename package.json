@@ -62,8 +62,8 @@
     "unified": "^10.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.15.7",
-    "@babel/types": "7.15.6",
+    "@babel/cli": "7.16.0",
+    "@babel/types": "7.16.0",
     "@hitechline/eslint-config": "2.0.2",
     "@rollup/plugin-babel": "5.3.0",
     "@rollup/plugin-commonjs": "21.0.1",
